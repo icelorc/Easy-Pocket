@@ -20,7 +20,7 @@
   // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
   self = [super initWithStyle:style];
   if (self) {
-    self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Outcome" image:[UIImage imageNamed:@"chart.png"] tag:1];
+    self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Outcome" image:[UIImage imageNamed:@"chart.png"] tag:1] autorelease];
   }
   return self;
 }
@@ -29,7 +29,9 @@
 #pragma mark navigationItem 
 
 - (void)toChart {
-  
+  EPChartViewController *chartViewController = [[EPChartViewController alloc] initWithNibName:@"EPChartViewController" bundle:nil];
+  [self.navigationController pushViewController:chartViewController animated:YES];
+  [chartViewController release];
 }
 
 

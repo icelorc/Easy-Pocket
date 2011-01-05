@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPChartViewController.h"
 
 
 @interface EPOutComeViewController : UITableViewController {

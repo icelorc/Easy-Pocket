@@ -27,7 +27,34 @@
 		9F3A0B9D12D46503004974C4 /* calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B9C12D46503004974C4 /* calculator@2x.png */; };
 		9F3A0BAF12D46645004974C4 /* EPChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A0BAD12D46645004974C4 /* EPChartViewController.m */; };
 		9F3A0BB012D46645004974C4 /* EPChartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0BAE12D46645004974C4 /* EPChartViewController.xib */; };
+		9F3A0C3E12D471E5004974C4 /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C3B12D471C6004974C4 /* libTapkuLibrary.a */; };
+		9F3A0C5C12D47263004974C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C5B12D47263004974C4 /* QuartzCore.framework */; };
+		9F3A0C5E12D47281004974C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C5D12D47281004974C4 /* MapKit.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F3A0C3A12D471C6004974C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libTapkuLibrary.a */;
+			remoteInfo = TapkuLibrary;
+		};
+		9F3A0C3C12D471C6004974C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3B6EDD521154791900E454DA /* libTapkuLibraryExtra.a */;
+			remoteInfo = TapkuLibraryExtra;
+		};
+		9F3A0C5812D47224004974C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D /* TapkuLibrary */;
+			remoteInfo = TapkuLibrary;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,6 +85,9 @@
 		9F3A0BAC12D46645004974C4 /* EPChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPChartViewController.h; sourceTree = "<group>"; };
 		9F3A0BAD12D46645004974C4 /* EPChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPChartViewController.m; sourceTree = "<group>"; };
 		9F3A0BAE12D46645004974C4 /* EPChartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = EPChartViewController.xib; path = Classes/EPChartViewController.xib; sourceTree = "<group>"; };
+		9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = "devinross-tapkulibrary-5a808aa/src/TapkuLibrary.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		9F3A0C5B12D47263004974C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9F3A0C5D12D47281004974C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +99,9 @@
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
 				28D801B40F44B63D00FB423F /* CoreData.framework in Frameworks */,
+				9F3A0C3E12D471E5004974C4 /* libTapkuLibrary.a in Frameworks */,
+				9F3A0C5C12D47263004974C4 /* QuartzCore.framework in Frameworks */,
+				9F3A0C5E12D47281004974C4 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,10 +163,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				28D801B30F44B63D00FB423F /* CoreData.framework */,
+				9F3A0C5B12D47263004974C4 /* QuartzCore.framework */,
+				9F3A0C5D12D47281004974C4 /* MapKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -166,6 +202,15 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		9F3A0C3612D471C6004974C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A0C3B12D471C6004974C4 /* libTapkuLibrary.a */,
+				9F3A0C3D12D471C6004974C4 /* libTapkuLibraryExtra.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -180,6 +225,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9F3A0C5912D47224004974C4 /* PBXTargetDependency */,
 			);
 			name = EasyPockect;
 			productName = EasyPockect;
@@ -203,12 +249,35 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 9F3A0C3612D471C6004974C4 /* Products */;
+					ProjectRef = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* EasyPockect */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		9F3A0C3B12D471C6004974C4 /* libTapkuLibrary.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTapkuLibrary.a;
+			remoteRef = 9F3A0C3A12D471C6004974C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9F3A0C3D12D471C6004974C4 /* libTapkuLibraryExtra.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libTapkuLibraryExtra.a;
+			remoteRef = 9F3A0C3C12D471C6004974C4 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -246,6 +315,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		9F3A0C5912D47224004974C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = TapkuLibrary;
+			targetProxy = 9F3A0C5812D47224004974C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -282,6 +359,11 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../devinross-tapkulibrary-5a808aa/src";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
@@ -295,7 +377,12 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "../devinross-tapkulibrary-5a808aa/src";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-Objc",
+					"-all_load",
+				);
 				PREBINDING = NO;
 				SDKROOT = iphoneos;
 			};
