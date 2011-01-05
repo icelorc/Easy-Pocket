@@ -19,6 +19,8 @@
 		9F3A0B2712D45677004974C4 /* EPMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B2512D45677004974C4 /* EPMainViewController.xib */; };
 		9F3A0B3412D45794004974C4 /* EPCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A0B3312D45794004974C4 /* EPCalendarViewController.m */; };
 		9F3A0B3912D45E28004974C4 /* EPOutComeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */; };
+		9F3A0B7612D462C9004974C4 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B7512D462C9004974C4 /* Calendar@2x.png */; };
+		9F3A0B7812D462E8004974C4 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B7712D462E8004974C4 /* Calendar.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		9F3A0B3312D45794004974C4 /* EPCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPCalendarViewController.m; sourceTree = "<group>"; };
 		9F3A0B3712D45E28004974C4 /* EPOutComeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPOutComeViewController.h; sourceTree = "<group>"; };
 		9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPOutComeViewController.m; sourceTree = "<group>"; };
+		9F3A0B7512D462C9004974C4 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
+		9F3A0B7712D462E8004974C4 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A0B7112D462B8004974C4 /* images */,
 				2819305F112F816700ECF9B4 /* EasyPockect.xcdatamodeld */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				9F3A0B2512D45677004974C4 /* EPMainViewController.xib */,
@@ -130,6 +135,15 @@
 				9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */,
 			);
 			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9F3A0B7112D462B8004974C4 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9F3A0B7712D462E8004974C4 /* Calendar.png */,
+				9F3A0B7512D462C9004974C4 /* Calendar@2x.png */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +197,8 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
 				9F3A0B2712D45677004974C4 /* EPMainViewController.xib in Resources */,
+				9F3A0B7612D462C9004974C4 /* Calendar@2x.png in Resources */,
+				9F3A0B7812D462E8004974C4 /* Calendar.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
