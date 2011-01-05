@@ -21,6 +21,10 @@
 		9F3A0B3912D45E28004974C4 /* EPOutComeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */; };
 		9F3A0B7612D462C9004974C4 /* Calendar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B7512D462C9004974C4 /* Calendar@2x.png */; };
 		9F3A0B7812D462E8004974C4 /* Calendar.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B7712D462E8004974C4 /* Calendar.png */; };
+		9F3A0B8A12D463B6004974C4 /* chart.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B8912D463B6004974C4 /* chart.png */; };
+		9F3A0B8C12D463C2004974C4 /* chart@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B8B12D463C2004974C4 /* chart@2x.png */; };
+		9F3A0B9B12D464F8004974C4 /* calculator.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B9A12D464F8004974C4 /* calculator.png */; };
+		9F3A0B9D12D46503004974C4 /* calculator@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0B9C12D46503004974C4 /* calculator@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +49,10 @@
 		9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPOutComeViewController.m; sourceTree = "<group>"; };
 		9F3A0B7512D462C9004974C4 /* Calendar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Calendar@2x.png"; sourceTree = "<group>"; };
 		9F3A0B7712D462E8004974C4 /* Calendar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Calendar.png; sourceTree = "<group>"; };
+		9F3A0B8912D463B6004974C4 /* chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chart.png; sourceTree = "<group>"; };
+		9F3A0B8B12D463C2004974C4 /* chart@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chart@2x.png"; sourceTree = "<group>"; };
+		9F3A0B9A12D464F8004974C4 /* calculator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calculator.png; sourceTree = "<group>"; };
+		9F3A0B9C12D46503004974C4 /* calculator@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calculator@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +148,10 @@
 		9F3A0B7112D462B8004974C4 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A0B9A12D464F8004974C4 /* calculator.png */,
+				9F3A0B9C12D46503004974C4 /* calculator@2x.png */,
+				9F3A0B8912D463B6004974C4 /* chart.png */,
+				9F3A0B8B12D463C2004974C4 /* chart@2x.png */,
 				9F3A0B7712D462E8004974C4 /* Calendar.png */,
 				9F3A0B7512D462C9004974C4 /* Calendar@2x.png */,
 			);
@@ -199,6 +211,10 @@
 				9F3A0B2712D45677004974C4 /* EPMainViewController.xib in Resources */,
 				9F3A0B7612D462C9004974C4 /* Calendar@2x.png in Resources */,
 				9F3A0B7812D462E8004974C4 /* Calendar.png in Resources */,
+				9F3A0B8A12D463B6004974C4 /* chart.png in Resources */,
+				9F3A0B8C12D463C2004974C4 /* chart@2x.png in Resources */,
+				9F3A0B9B12D464F8004974C4 /* calculator.png in Resources */,
+				9F3A0B9D12D46503004974C4 /* calculator@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
