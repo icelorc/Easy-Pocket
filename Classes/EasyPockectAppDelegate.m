@@ -20,13 +20,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
   
-  EPMainViewController *mainViewController = [[EPMainViewController alloc] initWithNibName:@"EPMainViewController" bundle:nil];
-  EPOutComeViewController *outComeViewController = [[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain];
-  EPCalendarViewController *calendarViewController = [[EPCalendarViewController alloc] init];
+  EPMainViewController *mainViewController = [[[EPMainViewController alloc] initWithNibName:@"EPMainViewController" bundle:nil] autorelease];
+  EPOutComeViewController *outComeViewController = [[[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+  EPCalendarViewController *calendarViewController = [[[EPCalendarViewController alloc] init] autorelease];
   
-  UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-  UINavigationController *outComeNavigationController = [[UINavigationController alloc] initWithRootViewController:outComeViewController];
-  UINavigationController *calendarNavigationController = [[UINavigationController alloc] initWithRootViewController:calendarViewController];
+  UINavigationController *mainNavigationController = [[[UINavigationController alloc] initWithRootViewController:mainViewController] autorelease];
+  UINavigationController *outComeNavigationController = [[[UINavigationController alloc] initWithRootViewController:outComeViewController] autorelease];
+  UINavigationController *calendarNavigationController = [[[UINavigationController alloc] initWithRootViewController:calendarViewController] autorelease];
   
   self.tabBarController = [[UITabBarController alloc] init];
   self.tabBarController.viewControllers = [NSArray arrayWithObjects:mainNavigationController, outComeNavigationController, calendarNavigationController, nil];
