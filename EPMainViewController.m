@@ -11,8 +11,6 @@
 
 @implementation EPMainViewController
 
-// The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -20,14 +18,24 @@
     }
     return self;
 }
-*/
 
-/*
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
-    [super viewDidLoad];
+
+#pragma mark -
+#pragma mark Navigation Item Action
+
+- (void)addExpend {
+  
 }
-*/
+
+#pragma mark -
+#pragma mark View life cycle
+
+- (void)viewWillAppear:(BOOL)animated {
+  [super viewWillAppear:animated];
+  
+  self.title = @"Main";
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addExpend)];
+}
 
 /*
 // Override to allow orientations other than the default portrait orientation.

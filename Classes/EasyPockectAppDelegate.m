@@ -21,12 +21,17 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
   
   EPMainViewController *mainViewController = [[EPMainViewController alloc] initWithNibName:@"EPMainViewController" bundle:nil];
-  EPOutComeViewController *outComeViewController = [[EPOutComeViewController alloc] init];
+  EPOutComeViewController *outComeViewController = [[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain];
   EPCalendarViewController *calendarViewController = [[EPCalendarViewController alloc] init];
   
-  UINavigationController *mainNavigationController = [UINavigationController ]
+  UINavigationController *mainNavigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+  UINavigationController *outComeNavigationController = [[UINavigationController alloc] initWithRootViewController:outComeViewController];
+  UINavigationController *calendarNavigationController = [[UINavigationController alloc] initWithRootViewController:calendarViewController];
   
   self.tabBarController = [[UITabBarController alloc] init];
+  self.tabBarController.viewControllers = [NSArray arrayWithObjects:mainNavigationController, outComeNavigationController, calendarNavigationController, nil];
+  
+  [self.window addSubview:self.tabBarController.view];
   
   [self.window makeKeyAndVisible];
   
@@ -200,6 +205,8 @@
   [managedObjectContext_ release];
   [managedObjectModel_ release];
   [persistentStoreCoordinator_ release];
+  
+  self.tabBarController = nil;
   
   [window release];
   [super dealloc];
