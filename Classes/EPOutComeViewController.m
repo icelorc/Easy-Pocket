@@ -42,6 +42,7 @@
   [super viewWillAppear:animated];
   self.title = @"Outcome";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chart" style:UIBarButtonItemStyleBordered target:self action:@selector(toChart)];
+  self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 /*

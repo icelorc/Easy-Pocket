@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EPAddExpendViewController : UITableViewController <UIPickerViewDelegate, UITextFieldDelegate>{
+@interface EPAddExpendViewController : UITableViewController <UIPickerViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>{
   UIPickerView *_pickerView;
+  UIDatePicker *_datePickerView;
   UITextField *_detailField;
-  UITextField *costField;
+  UITextField *_costField;
+  UIActionSheet *_actionSheet;
   
+  NSArray *_categoryArray;
+  NSArray *_EattingArray;
+  NSArray *_livingArray;
 }
 
 @end
