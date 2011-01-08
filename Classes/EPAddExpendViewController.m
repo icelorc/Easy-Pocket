@@ -50,6 +50,13 @@
   _pickerView.delegate = self;
   
   _datePickerView = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 44, 320, 160)];
+  _datePickerView.datePickerMode = UIDatePickerModeDate;
+  
+  _detailField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 160, 23)];
+  _detailField.textAlignment = UITextAlignmentRight;
+  _costField = [[UITextField alloc] initWithFrame:CGRectMake(0, 0, 160, 23)]; 
+  _costField.keyboardType = UIKeyboardTypeNumberPad;
+  _costField.textAlignment = UITextAlignmentRight;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -89,9 +96,13 @@
       break;
     case 1:
       cell.textLabel.text = @"Detail";
+      cell.accessoryView = _detailField;
+      _detailField.placeholder = @"Enter something.";
       break;
     case 2:
       cell.textLabel.text = @"Cost";
+      cell.accessoryView = _costField;
+      _costField.placeholder = @"Enter how much.";
       break;
     case 3:
       cell.textLabel.text = @"Date";
@@ -118,9 +129,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   
+  if (indexPath.row == 1 || indexPath.row == 2) {
+    return;
+  }
+  
   UIToolbar *pickerToolBar = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
-  
-  
   pickerToolBar.barStyle = UIBarStyleBlack;
   
   UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(donePickerItem)];
@@ -133,10 +146,6 @@
   _actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
   _actionSheet.destructiveButtonIndex = 3;
   [_actionSheet addSubview:pickerToolBar];
-  
-  
-  
-  
   
   if (indexPath.row == 0) {
     
