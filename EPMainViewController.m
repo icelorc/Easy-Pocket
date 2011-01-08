@@ -9,7 +9,33 @@
 #import "EPMainViewController.h"
 
 
+
 @implementation EPMainViewController
+
+@synthesize living = _living;
+@synthesize entertainment = _entertainment;
+@synthesize eating = _eating;
+
+- (NSMutableArray*)eating {
+  if (!_cams) {
+    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEating-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  return _eating;
+}
+
+- (NSMutableArray*)living {
+  if (!_cams) {
+    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  return _living;
+}
+
+- (NSMutableArray*)entertainment {
+  if (!_cams) {
+    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEntertainment-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  return _entertainment;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

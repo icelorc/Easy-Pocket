@@ -32,6 +32,7 @@
 		9F3A0C5E12D47281004974C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C5D12D47281004974C4 /* MapKit.framework */; };
 		9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */; };
 		9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */; };
+		9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526F3B12D8B354008380A1 /* EPDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = SOURCE_ROOT; };
 		9F526EF212D89C9A008380A1 /* EPAddExpendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAddExpendViewController.h; sourceTree = "<group>"; };
 		9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAddExpendViewController.m; sourceTree = "<group>"; };
+		9F526F3A12D8B354008380A1 /* EPDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPDataModel.h; sourceTree = "<group>"; };
+		9F526F3B12D8B354008380A1 /* EPDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9F526F3E12D8B35A008380A1 /* Model */,
 				9F3A0B2F12D456A6004974C4 /* ViewControllers */,
 				1D3623240D0F684500981E51 /* EasyPockectAppDelegate.h */,
 				1D3623250D0F684500981E51 /* EasyPockectAppDelegate.m */,
@@ -219,6 +223,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		9F526F3E12D8B35A008380A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9F526F3A12D8B354008380A1 /* EPDataModel.h */,
+				9F526F3B12D8B354008380A1 /* EPDataModel.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -320,6 +333,7 @@
 				9F3A0B3912D45E28004974C4 /* EPOutComeViewController.m in Sources */,
 				9F3A0BAF12D46645004974C4 /* EPChartViewController.m in Sources */,
 				9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */,
+				9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -33,8 +33,8 @@
 
 @property (nonatomic, retain)UITabBarController *tabBarController;
 
-- (NSURL *)applicationDocumentsDirectory;
 - (void)saveContext;
+- (NSString *)applicationDocumentsDirectory;
 
 @end
 

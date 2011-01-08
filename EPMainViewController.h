@@ -12,6 +12,14 @@
 
 @interface EPMainViewController : UIViewController {
 
+  NSMutableArray *_living;
+  NSMutableArray *_entertainment;
+  NSMutableArray *_eating;
+  
 }
+
+@property (nonatomic, retain)NSMutableArray *living;
+@property (nonatomic, retain)NSMutableArray *entertainment;
+@property (nonatomic, retain)NSMutableArray *eating;
 
 @end
