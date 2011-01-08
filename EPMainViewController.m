@@ -7,6 +7,7 @@
 //
 
 #import "EPMainViewController.h"
+#import "EasyPockectAppDelegate.h"
 
 
 
@@ -17,25 +18,27 @@
 @synthesize eating = _eating;
 
 - (NSMutableArray*)eating {
-  if (!_cams) {
-    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
-    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEating-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  if (!_eating) {
+    NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _eating = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEating-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
   return _eating;
 }
 
 - (NSMutableArray*)living {
-  if (!_cams) {
-    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
-    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  if (!_living) {
+    NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _living = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
   return _living;
 }
 
 - (NSMutableArray*)entertainment {
-  if (!_cams) {
-    NSString *documentPath = [(EDCamViewerAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
-    _cams = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEntertainment-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+  if (!_entertainment) {
+    NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    _entertainment = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEntertainment-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
   return _entertainment;
 }
+
+ 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

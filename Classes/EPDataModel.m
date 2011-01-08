@@ -11,7 +11,7 @@
 
 @implementation EPDataModel
 
-@synthesize categaory = _category;
+@synthesize category = _category;
 @synthesize detail = _detail;
 @synthesize cost = _cost;
 @synthesize date = _date;
