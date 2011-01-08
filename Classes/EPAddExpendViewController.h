@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 
-@interface EPAddExpendViewController : UITableViewController {
-
+@interface EPAddExpendViewController : UITableViewController <UIPickerViewDelegate, UITextFieldDelegate>{
+  UIPickerView *_pickerView;
+  UITextField *_detailField;
+  UITextField *costField;
+  
 }
 
 @end
