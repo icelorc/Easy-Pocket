@@ -31,7 +31,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import <TapkuLibrary/TapkuLibrary.h>
+#import "../TapkuLibrary/TapkuLibrary.h"
 
 @interface UINavigationBar (TKCategory)
 

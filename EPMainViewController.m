@@ -24,6 +24,11 @@
 #pragma mark Navigation Item Action
 
 - (void)addExpend {
+  EPAddExpendViewController *addExpendViewController = [[EPAddExpendViewController alloc] init];
+  UINavigationController *addExpendNavigationController = [[UINavigationController alloc] initWithRootViewController:addExpendViewController];
+  [self presentModalViewController:addExpendNavigationController animated:YES];
+  [addExpendViewController release];
+  [addExpendNavigationController release];
   
 }
 
@@ -35,6 +40,7 @@
   
   self.title = @"Main";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addExpend)];
+  
 }
 
 /*

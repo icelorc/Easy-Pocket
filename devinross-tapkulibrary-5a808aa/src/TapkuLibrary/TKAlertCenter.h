@@ -30,7 +30,7 @@
  */
 
 #import <Foundation/Foundation.h>
-#import <TapkuLibrary/TapkuLibrary.h>
+#import "../TapkuLibrary/TapkuLibrary.h"
 @class TKAlertView;
 
 

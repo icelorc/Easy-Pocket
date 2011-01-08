@@ -30,6 +30,8 @@
 		9F3A0C3E12D471E5004974C4 /* libTapkuLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C3B12D471C6004974C4 /* libTapkuLibrary.a */; };
 		9F3A0C5C12D47263004974C4 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C5B12D47263004974C4 /* QuartzCore.framework */; };
 		9F3A0C5E12D47281004974C4 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3A0C5D12D47281004974C4 /* MapKit.framework */; };
+		9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */; };
+		9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,21 +39,21 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = D2AAC07E0554694100DB518D /* libTapkuLibrary.a */;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
 			remoteInfo = TapkuLibrary;
 		};
 		9F3A0C3C12D471C6004974C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
 			proxyType = 2;
-			remoteGlobalIDString = 3B6EDD521154791900E454DA /* libTapkuLibraryExtra.a */;
+			remoteGlobalIDString = 3B6EDD521154791900E454DA;
 			remoteInfo = TapkuLibraryExtra;
 		};
 		9F3A0C5812D47224004974C4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */;
 			proxyType = 1;
-			remoteGlobalIDString = D2AAC07D0554694100DB518D /* TapkuLibrary */;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
 			remoteInfo = TapkuLibrary;
 		};
 /* End PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TapkuLibrary.xcodeproj; path = "devinross-tapkulibrary-5a808aa/src/TapkuLibrary.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		9F3A0C5B12D47263004974C4 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		9F3A0C5D12D47281004974C4 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TapkuLibrary.bundle; sourceTree = SOURCE_ROOT; };
+		9F526EF212D89C9A008380A1 /* EPAddExpendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPAddExpendViewController.h; sourceTree = "<group>"; };
+		9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAddExpendViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +134,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -179,6 +185,8 @@
 			children = (
 				9F3A0B2312D45677004974C4 /* EPMainViewController.h */,
 				9F3A0B2412D45677004974C4 /* EPMainViewController.m */,
+				9F526EF212D89C9A008380A1 /* EPAddExpendViewController.h */,
+				9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */,
 				9F3A0B3212D45794004974C4 /* EPCalendarViewController.h */,
 				9F3A0B3312D45794004974C4 /* EPCalendarViewController.m */,
 				9F3A0B3712D45E28004974C4 /* EPOutComeViewController.h */,
@@ -293,6 +301,7 @@
 				9F3A0B9B12D464F8004974C4 /* calculator.png in Resources */,
 				9F3A0B9D12D46503004974C4 /* calculator@2x.png in Resources */,
 				9F3A0BB012D46645004974C4 /* EPChartViewController.xib in Resources */,
+				9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +319,7 @@
 				9F3A0B3412D45794004974C4 /* EPCalendarViewController.m in Sources */,
 				9F3A0B3912D45E28004974C4 /* EPOutComeViewController.m in Sources */,
 				9F3A0BAF12D46645004974C4 /* EPChartViewController.m in Sources */,
+				9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
