@@ -20,6 +20,7 @@
   UILabel *_eatingLabel;
   UILabel *_entertainmentLabel;
   UILabel *_livingLabel;
+  UILabel *_totalLabel;
   
   UIButton *_goButton;
   
@@ -32,6 +33,7 @@
 @property (nonatomic, retain)IBOutlet UILabel *eatingLabel;
 @property (nonatomic, retain)IBOutlet UILabel *entertainmentLabel;
 @property (nonatomic, retain)IBOutlet UILabel *livingLabel;
+@property (nonatomic, retain)IBOutlet UILabel *totalLabel;
 
 - (IBAction)goButtonAction;
 

@@ -20,11 +20,24 @@
 @synthesize eatingLabel = _eatingLabel;
 @synthesize livingLabel = _livingLabel;
 @synthesize entertainmentLabel = _entertainmentLabel;
+@synthesize totalLabel = _totalLabel;
 
 - (void)planCostViewController:(EPPlanCostViewController *)planCostViewController eatingValue:(NSInteger)eatingValue entertainmentValue:(NSInteger)entertainmentValue livingValue:(NSInteger)livingValue {
   self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
   self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
   self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
+  self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue];
+  
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  
+  [userDefaults setInteger:eatingValue forKey:@"EPEatingValue"];
+  
+  NSLog(@"%d", [userDefaults integerForKey:@"EPEatingValue"]);
+  
+  [userDefaults setInteger:livingValue forKey:@"EPLivingValue"];
+  [userDefaults setInteger:entertainmentValue forKey:@"EPEntertainmentValue"];
+  
+  
 }
 
 - (IBAction)goButtonAction {
@@ -89,6 +102,16 @@
   
   self.title = @"Main";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addExpend)];
+  
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  NSInteger eatingValue = [userDefaults integerForKey:@"EPEatingValue"];
+  NSInteger entertainmentValue = [userDefaults integerForKey:@"EPEntertainmentValue"];
+  NSInteger livingValue = [userDefaults integerForKey:@"EPLivingValue"];
+  
+  self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
+  self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
+  self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
+  self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue];
   
 }
 
