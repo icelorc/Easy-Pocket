@@ -22,7 +22,7 @@
   // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
   self = [super initWithStyle:UITableViewStyleGrouped];
   if (self) {
-    
+    _dataModel = [[EPDataModel alloc] init];
     _categoryArray = [[NSArray alloc] initWithObjects:@"Eating", @"Living", @"Entertainment", nil];
     // Custom initialization.
   }
@@ -32,6 +32,9 @@
 - (void)doneItem {
 
   [self dismissModalViewControllerAnimated:YES];
+  
+  
+  
 }
 
 - (void)cancelItem {
@@ -117,7 +120,16 @@
 }
 
 - (void)donePickerItem {
+  
+  _dataModel.category = _category;
+  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:0];
+ 
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 23)];
+  label.textAlignment = UITextAlignmentRight;
+  cell.accessoryView = label;
+  label.text = [_categoryArray objectAtIndex:_category];
   [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
+  
 }
 
 - (void)cancelPickerItem {
@@ -176,6 +188,7 @@
 }
 
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+  _category = row;
 }
 
 #pragma mark -

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPDataModel.h"
 
 
 @interface EPAddExpendViewController : UITableViewController <UIPickerViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>{
@@ -19,6 +20,11 @@
   NSArray *_categoryArray;
   NSArray *_EattingArray;
   NSArray *_livingArray;
+  
+  NSInteger _category;
+  
+  EPDataModel *_dataModel;
+  
 }
 
 @end

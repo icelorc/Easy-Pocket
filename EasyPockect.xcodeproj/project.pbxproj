@@ -33,6 +33,8 @@
 		9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9F3A0D4512D47F59004974C4 /* TapkuLibrary.bundle */; };
 		9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */; };
 		9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526F3B12D8B354008380A1 /* EPDataModel.m */; };
+		9F5FBD5B12D992F30015234D /* EPPlanCostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FBD5912D992F30015234D /* EPPlanCostViewController.m */; };
+		9F5FBD5C12D992F30015234D /* EPPlanCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5FBD5A12D992F30015234D /* EPPlanCostViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,9 @@
 		9F526EF312D89C9A008380A1 /* EPAddExpendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPAddExpendViewController.m; sourceTree = "<group>"; };
 		9F526F3A12D8B354008380A1 /* EPDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPDataModel.h; sourceTree = "<group>"; };
 		9F526F3B12D8B354008380A1 /* EPDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPDataModel.m; sourceTree = "<group>"; };
+		9F5FBD5812D992F30015234D /* EPPlanCostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPPlanCostViewController.h; path = ../EPPlanCostViewController.h; sourceTree = "<group>"; };
+		9F5FBD5912D992F30015234D /* EPPlanCostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPPlanCostViewController.m; path = ../EPPlanCostViewController.m; sourceTree = "<group>"; };
+		9F5FBD5A12D992F30015234D /* EPPlanCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EPPlanCostViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +169,7 @@
 				2819305F112F816700ECF9B4 /* EasyPockect.xcdatamodeld */,
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
 				9F3A0BAE12D46645004974C4 /* EPChartViewController.xib */,
+				9F5FBD5A12D992F30015234D /* EPPlanCostViewController.xib */,
 				9F3A0B2512D45677004974C4 /* EPMainViewController.xib */,
 				8D1107310486CEB800E47090 /* EasyPockect-Info.plist */,
 			);
@@ -197,6 +203,8 @@
 				9F3A0B3812D45E28004974C4 /* EPOutComeViewController.m */,
 				9F3A0BAC12D46645004974C4 /* EPChartViewController.h */,
 				9F3A0BAD12D46645004974C4 /* EPChartViewController.m */,
+				9F5FBD5812D992F30015234D /* EPPlanCostViewController.h */,
+				9F5FBD5912D992F30015234D /* EPPlanCostViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -315,6 +323,7 @@
 				9F3A0B9D12D46503004974C4 /* calculator@2x.png in Resources */,
 				9F3A0BB012D46645004974C4 /* EPChartViewController.xib in Resources */,
 				9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */,
+				9F5FBD5C12D992F30015234D /* EPPlanCostViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +343,7 @@
 				9F3A0BAF12D46645004974C4 /* EPChartViewController.m in Sources */,
 				9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */,
 				9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */,
+				9F5FBD5B12D992F30015234D /* EPPlanCostViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

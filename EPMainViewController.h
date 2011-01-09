@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "EPAddExpendViewController.h"
+#import "EPPlanCostViewController.h"
 
 
 @interface EPMainViewController : UIViewController {
@@ -16,10 +17,15 @@
   NSMutableArray *_entertainment;
   NSMutableArray *_eating;
   
+  UIButton *_goButton;
+  
 }
 
 @property (nonatomic, retain)NSMutableArray *living;
 @property (nonatomic, retain)NSMutableArray *entertainment;
 @property (nonatomic, retain)NSMutableArray *eating;
+@property (nonatomic, retain)IBOutlet UIButton *goButton;
+
+- (IBAction)goButtonAction;
 
 @end

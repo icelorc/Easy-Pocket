@@ -16,6 +16,16 @@
 @synthesize living = _living;
 @synthesize entertainment = _entertainment;
 @synthesize eating = _eating;
+@synthesize goButton = _goButton;
+
+- (IBAction)goButtonAction {
+  EPPlanCostViewController *planCostViewController = [[EPPlanCostViewController alloc] initWithNibName:@"EPPlanCostViewController" bundle:nil];
+  [self.navigationController pushViewController:planCostViewController animated:YES];
+  [planCostViewController release];
+}
+
+#pragma mark -
+#pragma mark Read data from iPhone
 
 - (NSMutableArray*)eating {
   if (!_eating) {
