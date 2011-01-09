@@ -17,9 +17,19 @@
 @synthesize entertainment = _entertainment;
 @synthesize eating = _eating;
 @synthesize goButton = _goButton;
+@synthesize eatingLabel = _eatingLabel;
+@synthesize livingLabel = _livingLabel;
+@synthesize entertainmentLabel = _entertainmentLabel;
+
+- (void)planCostViewController:(EPPlanCostViewController *)planCostViewController eatingValue:(NSInteger)eatingValue entertainmentValue:(NSInteger)entertainmentValue livingValue:(NSInteger)livingValue {
+  self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
+  self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
+  self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
+}
 
 - (IBAction)goButtonAction {
   EPPlanCostViewController *planCostViewController = [[EPPlanCostViewController alloc] initWithNibName:@"EPPlanCostViewController" bundle:nil];
+  planCostViewController.delegate = self;
   [self.navigationController pushViewController:planCostViewController animated:YES];
   [planCostViewController release];
 }
