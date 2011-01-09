@@ -11,16 +11,22 @@
 
 @implementation EPOutComeViewController
 
+@synthesize eating = _eating;
+@synthesize entertainment = _entertainment;
+@synthesize living = _living;
 
 #pragma mark -
 #pragma mark Initialization
 
 
-- (id)initWithStyle:(UITableViewStyle)style {
+- (id)initWithStyle:(UITableViewStyle)style eating:(NSMutableArray *)eating entertainment:(NSMutableArray *)entertainment living:(NSMutableArray *)living{
   // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
   self = [super initWithStyle:style];
   if (self) {
     self.tabBarItem = [[[UITabBarItem alloc] initWithTitle:@"Outcome" image:[UIImage imageNamed:@"chart.png"] tag:1] autorelease];
+    self.eating = eating;
+    self.entertainment = entertainment;
+    self.living = living;
   }
   return self;
 }

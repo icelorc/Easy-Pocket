@@ -11,7 +11,15 @@
 
 
 @interface EPOutComeViewController : UITableViewController {
-
+  NSMutableArray *_eating;
+  NSMutableArray *_entertainment;
+  NSMutableArray *_living;
 }
+
+@property (nonatomic, retain)NSMutableArray *eating;
+@property (nonatomic, retain)NSMutableArray *entertainment;
+@property (nonatomic, retain)NSMutableArray *living;
+
+- (id)initWithStyle:(UITableViewStyle)style eating:(NSMutableArray *)eating entertainment:(NSMutableArray *)entertainment living:(NSMutableArray *)living; 
 
 @end

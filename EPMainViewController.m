@@ -40,6 +40,30 @@
   
 }
 
+- (void)addExpandViewController:(EPAddExpendViewController *)addExpandViewController dataModel:(EPDataModel *)dataModel {
+  
+  NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+
+  
+  switch (dataModel.category) {
+    case 0:
+      [self.eating addObject:dataModel];
+      [NSKeyedArchiver archiveRootObject:self.eating toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEating-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+      break;
+    case 1:
+      [self.entertainment addObject:dataModel];
+      [NSKeyedArchiver archiveRootObject:self.entertainment toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEntertainment-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+      break;
+    case 2:
+      [self.living addObject:dataModel];
+      [NSKeyedArchiver archiveRootObject:self.living toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLiving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+      break;
+
+    default:
+      break;
+  }
+}
+
 - (IBAction)goButtonAction {
   EPPlanCostViewController *planCostViewController = [[EPPlanCostViewController alloc] initWithNibName:@"EPPlanCostViewController" bundle:nil];
   planCostViewController.delegate = self;
@@ -60,7 +84,7 @@
 - (NSMutableArray*)living {
   if (!_living) {
     NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
-    _living = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
+    _living = [[NSMutableArray alloc] initWithArray:[NSKeyedUnarchiver unarchiveObjectWithFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLiving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]]];  }  
   return _living;
 }
 
@@ -87,6 +111,7 @@
 
 - (void)addExpend {
   EPAddExpendViewController *addExpendViewController = [[EPAddExpendViewController alloc] init];
+  addExpendViewController.delegate = self;
   UINavigationController *addExpendNavigationController = [[UINavigationController alloc] initWithRootViewController:addExpendViewController];
   [self presentModalViewController:addExpendNavigationController animated:YES];
   [addExpendViewController release];
@@ -112,6 +137,10 @@
   self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
   self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
   self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue];
+  
+  NSLog(@"living: %d", [self.living count]);
+  NSLog(@"entertainment: %d", [self.entertainment count]);
+  NSLog(@"eating: %d", [self.eating count]);
   
 }
 

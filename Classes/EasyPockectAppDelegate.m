@@ -25,7 +25,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
   
   EPMainViewController *mainViewController = [[[EPMainViewController alloc] initWithNibName:@"EPMainViewController" bundle:nil] autorelease];
-  EPOutComeViewController *outComeViewController = [[[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain] autorelease];
+  EPOutComeViewController *outComeViewController = [[[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain eating:mainViewController.eating entertainment:mainViewController.entertainment living:mainViewController.living] autorelease];
   EPCalendarViewController *calendarViewController = [[[EPCalendarViewController alloc] init] autorelease];
   
   UINavigationController *mainNavigationController = [[[UINavigationController alloc] initWithRootViewController:mainViewController] autorelease];

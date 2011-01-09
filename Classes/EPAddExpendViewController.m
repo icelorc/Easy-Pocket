@@ -11,8 +11,7 @@
 
 @implementation EPAddExpendViewController
 
-
-
+@synthesize delegate;
 
 #pragma mark -
 #pragma mark Initialization
@@ -23,13 +22,19 @@
   self = [super initWithStyle:UITableViewStyleGrouped];
   if (self) {
     _dataModel = [[EPDataModel alloc] init];
-    _categoryArray = [[NSArray alloc] initWithObjects:@"Eating", @"Living", @"Entertainment", nil];
+    _categoryArray = [[NSArray alloc] initWithObjects:@"Eating", @"Entertainment", @"Living", nil];
     // Custom initialization.
   }
   return self;
 }
 
 - (void)doneItem {
+
+  _dataModel.cost = [_costField.text intValue];
+  _dataModel.detail = _detailField.text;
+  _dataModel.category = _category;
+  
+  [delegate addExpandViewController:self dataModel:_dataModel];
 
   [self dismissModalViewControllerAnimated:YES];
   

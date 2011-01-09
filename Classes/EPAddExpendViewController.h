@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "EPDataModel.h"
 
+@protocol EPAddExpandViewControllerDelegate;
 
 @interface EPAddExpendViewController : UITableViewController <UIPickerViewDelegate, UITextFieldDelegate, UIActionSheetDelegate>{
   UIPickerView *_pickerView;
@@ -25,6 +26,17 @@
   
   EPDataModel *_dataModel;
   
+  id <EPAddExpandViewControllerDelegate>delegate;
+  
 }
 
+@property (nonatomic, retain)id <EPAddExpandViewControllerDelegate>delegate;
+
 @end
+
+@protocol EPAddExpandViewControllerDelegate
+
+- (void)addExpandViewController:(EPAddExpendViewController *)addExpandViewController dataModel:(EPDataModel *)dataModel;
+
+@end
+

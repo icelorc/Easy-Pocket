@@ -11,7 +11,7 @@
 #import "EPPlanCostViewController.h"
 
 
-@interface EPMainViewController : UIViewController <EPPlanCostViewControllerDelegate>{
+@interface EPMainViewController : UIViewController <EPPlanCostViewControllerDelegate, EPAddExpandViewControllerDelegate>{
 
   NSMutableArray *_living;
   NSMutableArray *_entertainment;
