@@ -7,6 +7,8 @@
 //
 
 #import "EPOutComeViewController.h"
+#import "EPDataModel.h"
+#import "EasyPockectAppDelegate.h"
 
 
 @implementation EPOutComeViewController
@@ -19,7 +21,7 @@
 #pragma mark Initialization
 
 
-- (id)initWithStyle:(UITableViewStyle)style eating:(NSMutableArray *)eating entertainment:(NSMutableArray *)entertainment living:(NSMutableArray *)living{
+- (id)initWithStyle:(UITableViewStyle)style eating:(NSMutableArray *)eating entertainment:(NSMutableArray *)entertainment living:(NSMutableArray *)living {
   // Override initWithStyle: if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
   self = [super initWithStyle:style];
   if (self) {
@@ -49,6 +51,8 @@
   self.title = @"Outcome";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chart" style:UIBarButtonItemStyleBordered target:self action:@selector(toChart)];
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
+  
+  [self.tableView reloadData];
 }
 
 /*
@@ -103,7 +107,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
   // Return the number of rows in the section.
-  return 2;
+  switch (section) {
+    case 0:
+      return [self.eating count];
+      break;
+    case 1:
+      return [self.entertainment count];
+      break;
+    case 2:
+      return [self.living count];
+      break;
+    default:
+      return 0;
+      break;
+  }
+  
 }
 
 
@@ -114,14 +132,67 @@
   
   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) {
-    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1
+                                   reuseIdentifier:CellIdentifier] autorelease];
   }
   
-  // Configure the cell...
-  
+  EPDataModel *dataModel;
+  if (indexPath.section == 0) {
+    dataModel = [self.eating objectAtIndex:indexPath.row];
+  } else if (indexPath.section == 1) {
+    dataModel = [self.entertainment objectAtIndex:indexPath.row];
+  } else if (indexPath.section == 2) {
+    dataModel = [self.living objectAtIndex:indexPath.row];
+  }
+  cell.textLabel.text = dataModel.detail;
+  cell.detailTextLabel.text = [NSString stringWithFormat:@"%d", dataModel.cost];
   return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+  if (editingStyle == UITableViewCellEditingStyleDelete) {
+    
+    NSString *documentPath = [(EasyPockectAppDelegate *)[[UIApplication sharedApplication] delegate] applicationDocumentsDirectory];
+    
+    if (indexPath.section == 0) {
+      [self.eating removeObjectAtIndex:indexPath.row];
+      [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+      [NSKeyedArchiver archiveRootObject:self.eating toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEating-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+    } else if (indexPath.section == 1) {
+      [self.entertainment removeObjectAtIndex:indexPath.row];
+      [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+      [NSKeyedArchiver archiveRootObject:self.entertainment toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPEntertainment-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+
+    } else if (indexPath.section == 2) {
+      [self.living removeObjectAtIndex:indexPath.row];
+      [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:YES];
+      [NSKeyedArchiver archiveRootObject:self.living toFile:[documentPath stringByAppendingPathComponent:[NSString stringWithFormat:@"EPLiving-%@.keyedArchive", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"]]]];
+
+    }
+
+  }
+}
+
+- (void)tableView:(UITableView *) tableView moveRowAtIndexPath:(NSIndexPath *) fromIndexPath toIndexPath: (NSIndexPath *) toIndexPath{
+  
+  if (fromIndexPath.section == 0) {
+    [self.eating exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+  } else if (fromIndexPath.section == 1) {
+    [self.entertainment exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+  } else if (fromIndexPath.section == 2) {
+    [self.living exchangeObjectAtIndex:fromIndexPath.row withObjectAtIndex:toIndexPath.row];
+  }
+  
+}
+
+
+- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+  return YES;
+}
 
 /*
  // Override to support conditional editing of the table view.

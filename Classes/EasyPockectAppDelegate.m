@@ -28,6 +28,12 @@
   EPOutComeViewController *outComeViewController = [[[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain eating:mainViewController.eating entertainment:mainViewController.entertainment living:mainViewController.living] autorelease];
   EPCalendarViewController *calendarViewController = [[[EPCalendarViewController alloc] init] autorelease];
   
+  calendarViewController.sourceArray1 = mainViewController.eating;
+  calendarViewController.sourceArray2 = mainViewController.entertainment;
+  calendarViewController.sourceArray3 = mainViewController.living;
+  
+  
+  
   UINavigationController *mainNavigationController = [[[UINavigationController alloc] initWithRootViewController:mainViewController] autorelease];
   UINavigationController *outComeNavigationController = [[[UINavigationController alloc] initWithRootViewController:outComeViewController] autorelease];
   UINavigationController *calendarNavigationController = [[[UINavigationController alloc] initWithRootViewController:calendarViewController] autorelease];
@@ -50,14 +56,6 @@
    */
 }
 
-
-- (void)applicationDidEnterBackground:(UIApplication *)application {
-  /*
-   Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-   If your application supports background execution, called instead of applicationWillTerminate: when the user quits.
-   */
-  [self saveContext];
-}
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {

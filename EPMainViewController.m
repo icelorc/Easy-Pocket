@@ -22,6 +22,14 @@
 @synthesize entertainmentLabel = _entertainmentLabel;
 @synthesize totalLabel = _totalLabel;
 
+@synthesize eatingExpandLabel = _eatingExpandLabel;
+@synthesize entertainmentExpandLabel = _entertainmentExpandLabel;
+@synthesize livingExpandLabel = _livingExpandLabel;
+
+@synthesize eatingEnd = _eatingEnd;
+@synthesize entertainmentEnd = _entertainmentEnd;
+@synthesize livingEnd  = _livingEnd;
+
 - (void)planCostViewController:(EPPlanCostViewController *)planCostViewController eatingValue:(NSInteger)eatingValue entertainmentValue:(NSInteger)entertainmentValue livingValue:(NSInteger)livingValue {
   self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
   self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
@@ -62,6 +70,31 @@
     default:
       break;
   }
+  
+  NSInteger eatingExpand = 0;
+  
+  for (EPDataModel *dataModel in self.eating) {
+    eatingExpand += dataModel.cost;
+  }
+  
+  self.eatingExpandLabel.text = [NSString stringWithFormat:@"%d", eatingExpand];
+  
+  NSInteger entertainmentExpand = 0;
+  
+  for (EPDataModel *dataModel in self.entertainment) {
+    entertainmentExpand += dataModel.cost;
+  }
+  
+  self.entertainmentExpandLabel.text = [NSString stringWithFormat:@"%d", entertainmentExpand];
+  
+  NSInteger livingExpand = 0;
+  
+  for (EPDataModel *dataModel in self.living) {
+    livingExpand += dataModel.cost;
+  }
+  
+  self.livingExpandLabel.text = [NSString stringWithFormat:@"%d", livingExpand];
+  
 }
 
 - (IBAction)goButtonAction {
@@ -136,7 +169,37 @@
   self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
   self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
   self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
-  self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue];
+  
+  
+  NSInteger eatingExpand = 0;
+  
+  for (EPDataModel *dataModel in self.eating) {
+    eatingExpand += dataModel.cost;
+  }
+  
+  self.eatingExpandLabel.text = [NSString stringWithFormat:@"%d", eatingExpand];
+  
+  NSInteger entertainmentExpand = 0;
+  
+  for (EPDataModel *dataModel in self.entertainment) {
+    entertainmentExpand += dataModel.cost;
+  }
+  
+  self.entertainmentExpandLabel.text = [NSString stringWithFormat:@"%d", entertainmentExpand];
+  
+  NSInteger livingExpand = 0;
+  
+  for (EPDataModel *dataModel in self.living) {
+    livingExpand += dataModel.cost;
+  }
+  
+  self.livingExpandLabel.text = [NSString stringWithFormat:@"%d", livingExpand];
+
+  self.eatingEnd.text = [NSString stringWithFormat:@"%d", eatingValue - eatingExpand];
+  self.entertainmentEnd.text = [NSString stringWithFormat:@"%d", entertainmentValue - entertainmentExpand];
+  self.livingEnd.text = [NSString  stringWithFormat:@"%d", livingValue - livingExpand];
+  
+  self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue - eatingExpand -entertainmentExpand - livingExpand];
   
   NSLog(@"living: %d", [self.living count]);
   NSLog(@"entertainment: %d", [self.entertainment count]);

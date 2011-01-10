@@ -127,7 +127,7 @@
 - (void)donePickerItem {
   
   _dataModel.category = _category;
-  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:0];
+  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
  
   UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 23)];
   label.textAlignment = UITextAlignmentRight;
@@ -135,6 +135,22 @@
   label.text = [_categoryArray objectAtIndex:_category];
   [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
   
+}
+
+- (void)doneDatePickerItem {
+  
+  NSDateFormatter *formatter = [[[NSDateFormatter alloc] init] autorelease];
+  [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"Asia/Taipei"]];
+  [formatter setDateFormat:@"yyyy-MM-dd"];
+  NSString *result = [formatter stringFromDate:[_datePickerView date]];
+  
+  UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:3 inSection:0]];
+
+  UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 160, 23)];
+  label.textAlignment = UITextAlignmentRight;
+  cell.accessoryView = label;
+  label.text = result;
+  [_actionSheet dismissWithClickedButtonIndex:0 animated:YES];
 }
 
 - (void)cancelPickerItem {
@@ -153,25 +169,32 @@
   UIToolbar *pickerToolBar = [[[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)] autorelease];
   pickerToolBar.barStyle = UIBarStyleBlack;
   
-  UIBarButtonItem *doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(donePickerItem)];
   UIBarButtonItem *cancelBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Cancel" style:UIBarButtonItemStyleBordered target:self action:@selector(cancelPickerItem)];
   UIBarButtonItem *flexibleSpace = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil] autorelease];
   
-  [pickerToolBar setItems:[NSArray arrayWithObjects:cancelBarButtonItem, flexibleSpace, doneBarButtonItem, nil]];
   
   _actionSheet = [[UIActionSheet alloc] initWithTitle:@"This is where the information will go" delegate:self cancelButtonTitle:nil destructiveButtonTitle:nil otherButtonTitles:@"First", @"Second", @"Cancel", nil];
   _actionSheet.actionSheetStyle = UIActionSheetStyleBlackOpaque;
   _actionSheet.destructiveButtonIndex = 3;
   [_actionSheet addSubview:pickerToolBar];
   
+  UIBarButtonItem *doneBarButtonItem;
+  
   if (indexPath.row == 0) {
-    
+    doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(donePickerItem)];
+
     [_actionSheet addSubview:_pickerView];
 
     
   }else if (indexPath.row == 3) {
+    doneBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Done" style:UIBarButtonItemStyleBordered target:self action:@selector(doneDatePickerItem)];
+
     [_actionSheet addSubview:_datePickerView];
   }
+  
+  [pickerToolBar setItems:[NSArray arrayWithObjects:cancelBarButtonItem, flexibleSpace, doneBarButtonItem, nil]];
+
+  
   [_actionSheet showInView:self.view];
   [doneBarButtonItem release];
   [cancelBarButtonItem release];

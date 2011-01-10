@@ -12,6 +12,7 @@
 @implementation EPCalendarViewController
 
 @synthesize dataArray, dataDictionary;
+@synthesize sourceArray1, sourceArray2, sourceArray3, totalSourceArray;
 
 - (id)init {
   if (self = [super initWithSunday:YES]) {
@@ -79,8 +80,7 @@
   static NSString *CellIdentifier = @"Cell";
   UITableViewCell *cell = [tv dequeueReusableCellWithIdentifier:CellIdentifier];
   if (cell == nil) cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier] autorelease];
-  
-	
+
   
 	NSArray *ar = [dataDictionary objectForKey:[self.monthView dateSelected]];
 	cell.textLabel.text = [ar objectAtIndex:indexPath.row];
@@ -100,13 +100,22 @@
 	
 	self.dataArray = [NSMutableArray array];
 	self.dataDictionary = [NSMutableDictionary dictionary];
-	
+	self.totalSourceArray = [NSMutableArray arrayWithArray:self.sourceArray1];
+  //self.totalSourceArray = [self.totalSourceArray arrayByAddingObjectsFromArray:self.sourceArray2];
+  //self.totalSourceArray = [self.totalSourceArray arrayByAddingObjectsFromArray:self.sourceArray3];
+  
+  
 	NSDate *d = start;
-	while(YES){
+  NSLog(@"starDate: %@", [start dateDescription]);
+  NSLog(@"EndDate: %@", [end dateDescription]);
+
+  
+  while(YES){
 		
+
 		int r = arc4random();
 		if(r % 3==1){
-			[self.dataDictionary setObject:[NSArray arrayWithObjects:@"Item one",@"Item two",nil] forKey:d];
+			[self.dataDictionary setObject:[NSArray arrayWithObjects:@"Breakfast",@"Lunch", nil] forKey:d];
 			[self.dataArray addObject:[NSNumber numberWithBool:YES]];
 			
 		}else if(r%4==1){
@@ -122,6 +131,7 @@
 		d = [NSDate dateFromDateInformation:info timeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
 		if([d compare:end]==NSOrderedDescending) break;
 	}
+   
 	
 }
 

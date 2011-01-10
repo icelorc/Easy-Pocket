@@ -22,6 +22,14 @@
   UILabel *_livingLabel;
   UILabel *_totalLabel;
   
+  UILabel *_eatingExpandLabel;
+  UILabel *_entertainmentExpandLabel;
+  UILabel *_livingExpandLabel;
+  
+  UILabel *_eatingEnd;
+  UILabel *_entertainmentEnd;
+  UILabel *_livingEnd;
+  
   UIButton *_goButton;
   
 }
@@ -34,6 +42,14 @@
 @property (nonatomic, retain)IBOutlet UILabel *entertainmentLabel;
 @property (nonatomic, retain)IBOutlet UILabel *livingLabel;
 @property (nonatomic, retain)IBOutlet UILabel *totalLabel;
+
+@property (nonatomic, retain)IBOutlet UILabel *eatingExpandLabel;
+@property (nonatomic, retain)IBOutlet UILabel *entertainmentExpandLabel;
+@property (nonatomic, retain)IBOutlet UILabel *livingExpandLabel;
+
+@property (nonatomic, retain)IBOutlet UILabel *eatingEnd;
+@property (nonatomic, retain)IBOutlet UILabel *entertainmentEnd;
+@property (nonatomic, retain)IBOutlet UILabel *livingEnd;
 
 - (IBAction)goButtonAction;
 
