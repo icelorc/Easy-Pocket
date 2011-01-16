@@ -51,8 +51,26 @@
   self.title = @"Outcome";
   self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Chart" style:UIBarButtonItemStyleBordered target:self action:@selector(toChart)];
   self.navigationItem.leftBarButtonItem = self.editButtonItem;
-  
   [self.tableView reloadData];
+  
+  NSInteger eatingCost = 0, livingCost = 0, entertainmentCost = 0;
+  for (EPDataModel *ele in self.eating) {
+    eatingCost += ele.cost;
+  }
+  
+  for (EPDataModel *ele in self.entertainment) {
+    entertainmentCost += ele.cost;
+  }
+  
+  for (EPDataModel *ele in self.living) {
+    livingCost += ele.cost;
+  }
+  
+  NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+  [userDefaults setInteger:eatingCost forKey:@"EatingTotalCost"];
+  [userDefaults setInteger:entertainmentCost forKey:@"EntertainmentTotalCost"];
+  [userDefaults setInteger:livingCost forKey:@"LivingTotalCost"];
+  
 }
 
 /*
