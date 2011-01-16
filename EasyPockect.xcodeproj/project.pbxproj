@@ -35,6 +35,12 @@
 		9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F526F3B12D8B354008380A1 /* EPDataModel.m */; };
 		9F5FBD5B12D992F30015234D /* EPPlanCostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5FBD5912D992F30015234D /* EPPlanCostViewController.m */; };
 		9F5FBD5C12D992F30015234D /* EPPlanCostViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5FBD5A12D992F30015234D /* EPPlanCostViewController.xib */; };
+		9FEDF79112E33A620029A805 /* BNColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDF78812E33A620029A805 /* BNColor.m */; };
+		9FEDF79212E33A620029A805 /* BNPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDF78A12E33A620029A805 /* BNPieChart.m */; };
+		9FEDF79312E33A620029A805 /* NSObject+Be.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDF78C12E33A620029A805 /* NSObject+Be.m */; };
+		9FEDF79412E33A620029A805 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDF78D12E33A620029A805 /* README.md */; };
+		9FEDF79512E33A620029A805 /* UIView+Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FEDF78F12E33A620029A805 /* UIView+Position.m */; };
+		9FEDF79612E33A620029A805 /* uncrustify.cfg in Resources */ = {isa = PBXBuildFile; fileRef = 9FEDF79012E33A620029A805 /* uncrustify.cfg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +107,16 @@
 		9F5FBD5812D992F30015234D /* EPPlanCostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EPPlanCostViewController.h; path = ../EPPlanCostViewController.h; sourceTree = "<group>"; };
 		9F5FBD5912D992F30015234D /* EPPlanCostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EPPlanCostViewController.m; path = ../EPPlanCostViewController.m; sourceTree = "<group>"; };
 		9F5FBD5A12D992F30015234D /* EPPlanCostViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EPPlanCostViewController.xib; sourceTree = "<group>"; };
+		9FEDF78712E33A620029A805 /* BNColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNColor.h; sourceTree = "<group>"; };
+		9FEDF78812E33A620029A805 /* BNColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNColor.m; sourceTree = "<group>"; };
+		9FEDF78912E33A620029A805 /* BNPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNPieChart.h; sourceTree = "<group>"; };
+		9FEDF78A12E33A620029A805 /* BNPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNPieChart.m; sourceTree = "<group>"; };
+		9FEDF78B12E33A620029A805 /* NSObject+Be.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Be.h"; sourceTree = "<group>"; };
+		9FEDF78C12E33A620029A805 /* NSObject+Be.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Be.m"; sourceTree = "<group>"; };
+		9FEDF78D12E33A620029A805 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9FEDF78E12E33A620029A805 /* UIView+Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Position.h"; sourceTree = "<group>"; };
+		9FEDF78F12E33A620029A805 /* UIView+Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Position.m"; sourceTree = "<group>"; };
+		9FEDF79012E33A620029A805 /* uncrustify.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = uncrustify.cfg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +195,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9FEDF77612E33A500029A805 /* Pie Chart */,
 				9F3A0C3012D471C6004974C4 /* TapkuLibrary.xcodeproj */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -238,6 +255,23 @@
 				9F526F3B12D8B354008380A1 /* EPDataModel.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		9FEDF77612E33A500029A805 /* Pie Chart */ = {
+			isa = PBXGroup;
+			children = (
+				9FEDF78712E33A620029A805 /* BNColor.h */,
+				9FEDF78812E33A620029A805 /* BNColor.m */,
+				9FEDF78912E33A620029A805 /* BNPieChart.h */,
+				9FEDF78A12E33A620029A805 /* BNPieChart.m */,
+				9FEDF78B12E33A620029A805 /* NSObject+Be.h */,
+				9FEDF78C12E33A620029A805 /* NSObject+Be.m */,
+				9FEDF78D12E33A620029A805 /* README.md */,
+				9FEDF78E12E33A620029A805 /* UIView+Position.h */,
+				9FEDF78F12E33A620029A805 /* UIView+Position.m */,
+				9FEDF79012E33A620029A805 /* uncrustify.cfg */,
+			);
+			name = "Pie Chart";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -324,6 +358,8 @@
 				9F3A0BB012D46645004974C4 /* EPChartViewController.xib in Resources */,
 				9F3A0D4612D47F59004974C4 /* TapkuLibrary.bundle in Resources */,
 				9F5FBD5C12D992F30015234D /* EPPlanCostViewController.xib in Resources */,
+				9FEDF79412E33A620029A805 /* README.md in Resources */,
+				9FEDF79612E33A620029A805 /* uncrustify.cfg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +380,10 @@
 				9F526EF412D89C9A008380A1 /* EPAddExpendViewController.m in Sources */,
 				9F526F3C12D8B354008380A1 /* EPDataModel.m in Sources */,
 				9F5FBD5B12D992F30015234D /* EPPlanCostViewController.m in Sources */,
+				9FEDF79112E33A620029A805 /* BNColor.m in Sources */,
+				9FEDF79212E33A620029A805 /* BNPieChart.m in Sources */,
+				9FEDF79312E33A620029A805 /* NSObject+Be.m in Sources */,
+				9FEDF79512E33A620029A805 /* UIView+Position.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

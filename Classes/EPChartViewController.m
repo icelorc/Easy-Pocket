@@ -16,6 +16,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
       
+      
     }
     return self;
 }
@@ -29,12 +30,13 @@
   self.title = @"Chart";
 }
 
-/*
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+  [self.view addSubview:[BNPieChart pieChartSampleWithFrame:CGRectMake(0, 0, 300, 300)]];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.

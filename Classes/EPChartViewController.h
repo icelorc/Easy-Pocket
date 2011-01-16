@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "BNPieChart.h"
 
 @interface EPChartViewController : UIViewController {
-
+  BNPieChart *_pieChart;
 }
 
 @end
