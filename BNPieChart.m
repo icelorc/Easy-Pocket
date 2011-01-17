@@ -290,6 +290,7 @@ float dist(float x1, float y1, float x2, float y2) {
 
 - (void)moveInLabel:(int)index {
 	float outerRadius = radius / kRadiusPortion;
+  NSLog(@"outerRadius: %f", outerRadius);
 	UILabel* label = [nameLabels objectAtIndex:index];
 	float distance = [self approxDistFromCenter:label.frame];
 	float excessDist = distance - outerRadius;

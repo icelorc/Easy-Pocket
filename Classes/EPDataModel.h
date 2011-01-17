@@ -13,12 +13,12 @@
   NSInteger _category;
   NSString *_detail;
   NSInteger _cost;
-  NSDate *date;
+  NSDate *_date;
 }
 
 @property (nonatomic)NSInteger category;
 @property (nonatomic, retain)NSString *detail;
 @property (nonatomic)NSInteger cost;
-@property (nonatomic, retain)NSData *date;
+@property (nonatomic, retain)NSDate *date;
 
 @end

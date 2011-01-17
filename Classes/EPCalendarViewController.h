@@ -8,24 +8,24 @@
 
 #import <UIKit/UIKit.h>
 #import "../devinross-tapkulibrary-5a808aa/src/TapkuLibrary/TapkuLibrary.h"
+#import "EPDataModel.h"
 
 @interface EPCalendarViewController : TKCalendarMonthTableViewController {
-  NSMutableArray *sourceArray1;
-  NSMutableArray *sourceArray2;
-  NSMutableArray *sourceArray3;
   NSMutableArray *totalSourceArray;
   NSMutableArray *dataArray; 
 	NSMutableDictionary *dataDictionary;
+  NSMutableArray *_eating;
+  NSMutableArray *_entertainment;
+  NSMutableArray *_living;
 }
 
 @property (retain,nonatomic) NSMutableArray *dataArray;
 @property (retain,nonatomic) NSMutableDictionary *dataDictionary;
-@property (retain,nonatomic) NSMutableArray *sourceArray1;
-@property (retain,nonatomic) NSMutableArray *sourceArray2;
-@property (retain,nonatomic) NSMutableArray *sourceArray3;
 @property (retain,nonatomic) NSMutableArray *totalSourceArray;
 
 
 - (void) generateRandomDataForStartDate:(NSDate*)start endDate:(NSDate*)end;
+- (id)initWithEating:(NSMutableArray *)eating entertainment:(NSMutableArray *)entertainment living:(NSMutableArray *)living;
+
 
 @end

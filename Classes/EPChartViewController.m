@@ -30,22 +30,26 @@
   self.title = @"Chart";
   
   NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-  
-  NSInteger eatingBudget = [userDefaults integerForKey:@"EPEatingValue"];
-  NSInteger entertainmentBudget = [userDefaults integerForKey:@"EPEntertainmentValue"];
-  NSInteger livingBudge = [userDefaults integerForKey:@"EPLivingValue"];
-  NSInteger totalBudge = eatingBudget + entertainmentBudget + livingBudge;
-  
+    
   NSInteger eatingTotalCost = [userDefaults integerForKey:@"EatingTotalCost"];
   NSInteger entertainmentTotalCost = [userDefaults integerForKey:@"EntertainmentTotalCost"];
   NSInteger livingTotalCost = [userDefaults integerForKey:@"LivingTotalCost"];
   NSInteger totalCost = eatingTotalCost + livingTotalCost + entertainmentTotalCost;
+  
+  NSInteger totalBudge = eatingTotalCost + entertainmentTotalCost + livingTotalCost;
+
+  
   if (totalBudge == 0) {
     UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Your totalbudge is ZERO!" message:nil delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alertView show];
     [alertView release];
     return;
   }
+  
+  if ([_pieChart superview] != nil) {
+    [_pieChart removeFromSuperview];
+  }
+  
   
   _pieChart = [[BNPieChart alloc] initWithFrame:CGRectMake(15, 0, 300, 300)];
   if (eatingTotalCost != 0) {
@@ -57,15 +61,25 @@
   }
   
   if (livingTotalCost != 0) {
-    [_pieChart addSlicePortion:livingTotalCost/(float)livingBudge withName:@"Living"]; 
+    [_pieChart addSlicePortion:livingTotalCost/(float)totalBudge withName:@"Living"]; 
   }
-  float remains = 1.0 - eatingTotalCost/(float)totalBudge - entertainmentTotalCost/(float)totalBudge - livingTotalCost/(float)livingBudge;
-  [_pieChart addSlicePortion:remains  withName:@"Unused"]; 
+  
+  NSLog(@"totalCost: %i", totalCost);
+  NSLog(@"1: %f", eatingTotalCost/(float)totalBudge);
+  NSLog(@"2: %f", entertainmentTotalCost/(float)totalBudge);
+  NSLog(@"3: %f", livingTotalCost/(float)totalBudge);
+  //NSLog(@"remains: %f", remains);
+  
+  //[_pieChart addSlicePortion:remains  withName:@"Unused"]; 
   [self.view addSubview:_pieChart];
   [_pieChart release];
   _pieChart = nil;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+  [super viewWillDisappear:animated];
+  [_pieChart removeFromSuperview];
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {

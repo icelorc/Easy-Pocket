@@ -33,6 +33,7 @@
   _dataModel.cost = [_costField.text intValue];
   _dataModel.detail = _detailField.text;
   _dataModel.category = _category;
+  _dataModel.date = [_datePickerView date];
   
   [delegate addExpandViewController:self dataModel:_dataModel];
 

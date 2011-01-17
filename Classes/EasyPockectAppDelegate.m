@@ -26,13 +26,7 @@
   
   EPMainViewController *mainViewController = [[[EPMainViewController alloc] initWithNibName:@"EPMainViewController" bundle:nil] autorelease];
   EPOutComeViewController *outComeViewController = [[[EPOutComeViewController alloc] initWithStyle:UITableViewStylePlain eating:mainViewController.eating entertainment:mainViewController.entertainment living:mainViewController.living] autorelease];
-  EPCalendarViewController *calendarViewController = [[[EPCalendarViewController alloc] init] autorelease];
-  
-  calendarViewController.sourceArray1 = mainViewController.eating;
-  calendarViewController.sourceArray2 = mainViewController.entertainment;
-  calendarViewController.sourceArray3 = mainViewController.living;
-  
-  
+  EPCalendarViewController *calendarViewController = [[[EPCalendarViewController alloc] initWithEating:mainViewController.eating entertainment:mainViewController.entertainment living:mainViewController.living] autorelease];
   
   UINavigationController *mainNavigationController = [[[UINavigationController alloc] initWithRootViewController:mainViewController] autorelease];
   UINavigationController *outComeNavigationController = [[[UINavigationController alloc] initWithRootViewController:outComeViewController] autorelease];

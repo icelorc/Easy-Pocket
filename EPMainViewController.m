@@ -166,6 +166,7 @@
   NSInteger entertainmentValue = [userDefaults integerForKey:@"EPEntertainmentValue"];
   NSInteger livingValue = [userDefaults integerForKey:@"EPLivingValue"];
   
+  
   self.eatingLabel.text = [NSString stringWithFormat:@"%d", eatingValue];
   self.livingLabel.text = [NSString stringWithFormat:@"%d", livingValue];
   self.entertainmentLabel.text = [NSString stringWithFormat:@"%d", entertainmentValue];
@@ -200,6 +201,10 @@
   self.livingEnd.text = [NSString  stringWithFormat:@"%d", livingValue - livingExpand];
   
   self.totalLabel.text = [NSString stringWithFormat:@"%d", eatingValue + livingValue + entertainmentValue - eatingExpand -entertainmentExpand - livingExpand];
+  
+  if ((eatingValue + livingValue + entertainmentValue - eatingExpand -entertainmentExpand - livingExpand) == 0) {
+    [self performSelector:@selector(goButtonAction)];
+  }
   
   NSLog(@"living: %d", [self.living count]);
   NSLog(@"entertainment: %d", [self.entertainment count]);
