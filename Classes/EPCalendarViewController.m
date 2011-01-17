@@ -36,6 +36,7 @@
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   self.title = @"Calendar";
+  [self viewDidLoad];
 }
 
 - (void)didReceiveMemoryWarning {
